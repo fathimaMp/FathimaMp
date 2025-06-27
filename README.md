@@ -32,8 +32,8 @@
 
 ### 🔗 Connect with Me
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fathima-mp))  
-[![Portfolio](https://img.shields.io/badge/My_Portfolio-Click_Here-orange?style=for-the-badge)](https://your-portfolio-link.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fathima-mp)
+[![Portfolio](https://img.shields.io/badge/My_Portfolio-Click_Here-orange?style=for-the-badge)](https://fathimamp.github.io/personal_website/)
 
 ---
 
