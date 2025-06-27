@@ -32,7 +32,7 @@
 
 ### 🔗 Connect with Me
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https:[//www.linkedin.com/in/your-link](https://www.linkedin.com/in/fathima-mp))  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fathima-mp))  
 [![Portfolio](https://img.shields.io/badge/My_Portfolio-Click_Here-orange?style=for-the-badge)](https://your-portfolio-link.com)
 
 ---
