@@ -1,0 +1,15 @@
+{
+  "name": "github-contrib-rush",
+  "version": "1.0.0",
+  "description": "Generate a Rush-style animation from GitHub contributions",
+  "main": "generate.js",
+  "scripts": {
+    "generate": "node generate.js"
+  },
+  "dependencies": {
+    "axios": "^1.5.0",
+    "cheerio": "^1.0.0-rc.12",
+    "canvas": "^2.11.2",
+    "gifencoder": "^2.0.1"
+  }
+}
