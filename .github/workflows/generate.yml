@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      GITHUB_USERNAME: USERNAME  # replace with your username or set as repo secret
+      GITHUB_USERNAME: FathimaMp  # replace with your username or set as repo secret
     steps:
       - name: Checkout
         uses: actions/checkout@v4
