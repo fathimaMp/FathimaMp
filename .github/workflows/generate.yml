@@ -25,7 +25,8 @@ jobs:
           node-version: '20'
 
       - name: Install npm packages
-        run: npm ci
+        run: npm install
+
 
       - name: Generate GIF
         run: npm run generate
