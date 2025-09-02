@@ -1,0 +1,39 @@
+name: Generate Contrib Rush GIF
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 6 * * 1' # weekly every Monday 06:00 UTC (adjust as you like)
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_USERNAME: USERNAME  # replace with your username or set as repo secret
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install apt deps for canvas
+        run: sudo apt-get update && sudo apt-get install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install npm packages
+        run: npm ci
+
+      - name: Generate GIF
+        run: npm run generate
+        env:
+          GITHUB_USERNAME: ${{ env.GITHUB_USERNAME }}
+
+      - name: Commit and push generated gif
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update contrib-rush gif"
+          file_pattern: "contrib-rush.gif"
