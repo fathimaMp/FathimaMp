@@ -2,7 +2,7 @@ name: Generate Contribution Snake GIF
 
 on:
   schedule:
-    - cron: "0 6 * * 1" # Weekly every Monday at 06:00 UTC
+    - cron: "0 6 * * 1" # Weekly every Monday 06:00 UTC
   workflow_dispatch:
   push:
     branches:
@@ -12,7 +12,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # ✅ This allows pushing changes
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -21,7 +21,7 @@ jobs:
       - name: Generate Snake
         uses: Platane/snk@v3
         with:
-          github_user_name: FathimaMp
+          github_user_name: FathimaMp    # ✅ Correct username
           outputs: |
             dist/snake.svg
             dist/snake.gif
@@ -32,4 +32,4 @@ jobs:
           commit_message: "chore: update contribution snake GIF"
           file_pattern: dist/*
           branch: main
-          token: ${{ secrets.GITHUB_TOKEN }} # ✅ Give the bot permission
+          token: ${{ secrets.GITHUB_TOKEN }}
