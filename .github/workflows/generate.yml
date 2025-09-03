@@ -1,40 +1,31 @@
-name: Generate Contrib Rush GIF
+name: Generate Contribution Snake GIF
 
 on:
-  push:
-    branches: [ main ]
   schedule:
-    - cron: '0 6 * * 1' # weekly every Monday 06:00 UTC (adjust as you like)
-  workflow_dispatch:
+    - cron: "0 6 * * 1"  # Runs every Monday at 06:00 UTC
+  workflow_dispatch:      # Allows manual trigger
+  push:
+    branches:
+      - main              # Runs on push to main branch
 
 jobs:
-  build:
+  generate:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_USERNAME: FathimaMp  # replace with your username or set as repo secret
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install apt deps for canvas
-        run: sudo apt-get update && sudo apt-get install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Generate Snake
+        uses: Platane/snk@v3
         with:
-          node-version: '20'
+          github_user_name: FathimaMp   # ✅ Your GitHub username
+          outputs: |
+            dist/snake.svg
+            dist/snake.gif
 
-      - name: Install npm packages
-        run: npm install
-
-
-      - name: Generate GIF
-        run: npm run generate
-        env:
-          GITHUB_USERNAME: ${{ env.GITHUB_USERNAME }}
-
-      - name: Commit and push generated gif
+      - name: Push Snake GIF to Profile Repo
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update contrib-rush gif"
-          file_pattern: "contrib-rush.gif"
+          commit_message: "chore: update contribution snake GIF"
+          file_pattern: dist/*
+          branch: main
