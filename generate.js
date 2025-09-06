@@ -151,7 +151,7 @@ async function renderGif(columns) {
     ctx.strokeStyle = "#000";
     ctx.lineWidth = 1;
     ctx.arc(rx, ry + 1, 4, 0, Math.PI);
-    ctx.stroke();
+    ctx.stroke(); 
 
     // small score text (optionally)
     ctx.fillStyle = "#000";
