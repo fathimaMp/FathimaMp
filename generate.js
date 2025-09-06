@@ -25,7 +25,7 @@ function parseContribSvg(svg) {
   rects.each((i, el) => {
     const x = parseInt($(el).attr("x"));
     const y = parseInt($(el).attr("y"));
-    const date = $(el).attr("data-date");
+    const date = $(el).attr("data-date"); 
     const count = parseInt($(el).attr("data-count") || "0");
     if (!grid[x]) grid[x] = [];
     grid[x].push({ y, date, count });
