@@ -1,7 +1,7 @@
 ### 💫 About Me
 - 🎓 BCA Graduate | 📍 Kannur, Kerala  
 - 🔭 I’m currently working on **Django projects**
-- 🌱 Learning APIs, Razorpay Integration, and Problem Solving
+- 🌱 Learning APIs, Razorpay Integration, and Problem Solving          
 - 👨‍💻 All of my projects are available on my [GitHub](https://github.com/fathimamp)
 - 💬 Ask me about **Python, Django, HTML, CSS, React**
 - 📫 How to reach me: **fathima@example.com**
