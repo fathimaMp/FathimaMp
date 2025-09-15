@@ -1,13 +1,34 @@
-### 💫 About Me
-- 🎓 BCA Graduate | 📍 Kannur, Kerala  
-- 🔭 I’m currently working on **Django projects**
-- 🌱 Learning APIs, Razorpay Integration, and Problem Solving          
-- 👨‍💻 All of my projects are available on my [GitHub](https://github.com/fathimamp)
-- 💬 Ask me about **Python, Django, HTML, CSS, React**
-- 📫 How to reach me: **fathima@example.com**
-- ⚡ Fun fact: I love designing clean and beautiful websites ✨
+name: Process Avatar
 
----
+on:
+  push:
+    paths:
+      - "raw_assets/avatar_original.png"
+      - "scripts/process_avatar.py"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install Pillow
+        run: python -m pip install --upgrade pip pillow
+      - name: Process avatar
+        run: python scripts/process_avatar.py
+      - name: Commit processed avatar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/avatar.png
+          git commit -m "Auto: process avatar" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 ### 🚀 Tech Stack
 
